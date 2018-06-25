@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1021767137334",
+    "firebase_url": "https://irscisafe.firebaseio.com",
+    "project_id": "irscisafe",
+    "storage_bucket": "irscisafe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1021767137334:android:a6cda4c28d3c7d70",
+        "android_client_info": {
+          "package_name": "com.shivam.irsc_isafe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1021767137334-kadtqtn45k8g0aheertrv896v035ei9v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shivam.irsc_isafe",
+            "certificate_hash": "73b95d1dfae420e03dad6dff2d89ca279acc5995"
+          }
+        },
+        {
+          "client_id": "1021767137334-3rm0797qtn22knngt20rueg5aq1kk9dn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDUE9UnFDTaLZeBd_J9zRiZHI7dtZz-dQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1021767137334-3rm0797qtn22knngt20rueg5aq1kk9dn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
