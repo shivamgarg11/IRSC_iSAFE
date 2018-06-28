@@ -1,5 +1,6 @@
 package com.shivam.irsc_isafe.Activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -29,10 +30,14 @@ public class ChattingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chatting);
 
+        Intent i=new Intent(ChattingActivity.this,Login.class);
+        startActivity(i);
+        finish();
 
 
-        final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        final DatabaseReference myRef = database.getReference("message").child("group1");
+
+        final FirebaseDatabase databasechatting = FirebaseDatabase.getInstance();
+        final DatabaseReference myRefchatting = databasechatting.getReference("message").child(Login.userlogin.getTeamcode());
         final RecyclerView li=findViewById(R.id.listview);
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -46,17 +51,17 @@ public class ChattingActivity extends AppCompatActivity {
             public void onClick(View v) {
                 EditText edit=findViewById(R.id.Edittext);
                 String str=edit.getText().toString();
-                messageclass messageclass=new messageclass(str,"user1");
-                myRef.push().setValue(messageclass);
+                messageclass message1=new messageclass(str,"user1");
+                myRefchatting.push().setValue(message1);
                 edit.setText("");
             }
         });
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        // Reading message
+               // Reading message
 
 
-        myRef.addValueEventListener(new ValueEventListener() {
+        myRefchatting.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 chats.clear();
@@ -65,7 +70,7 @@ public class ChattingActivity extends AppCompatActivity {
                 for(DataSnapshot snap:dataSnapshot.getChildren()){
                    chats.add(snap.getValue(messageclass.class));
                     }
-                chattingAdaptor adapter=new chattingAdaptor(ChattingActivity.this,chats,"user1");
+                chattingAdaptor adapter=new chattingAdaptor(ChattingActivity.this,chats,Login.userlogin.getContactnumber());
                 li.setLayoutManager(new LinearLayoutManager(ChattingActivity.this));
                 li.setAdapter(adapter);
                 li.scrollToPosition(chats.size()-1);
