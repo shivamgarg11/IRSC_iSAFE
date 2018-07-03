@@ -63,8 +63,9 @@ public class chattingAdaptor extends RecyclerView.Adapter<chattingAdaptor.Course
 
 
 
-    static class CourseViewHolder extends RecyclerView.ViewHolder {
-        TextView chatusername, chatusermessage;
+    public static class CourseViewHolder extends RecyclerView.ViewHolder {
+        public TextView chatusername;
+        public TextView chatusermessage;
 
         public CourseViewHolder(View itemView) {
             super(itemView);

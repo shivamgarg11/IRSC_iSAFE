@@ -1,22 +1,13 @@
 package com.shivam.irsc_isafe.Activities;
 
+import android.app.Notification;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageView;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.shivam.irsc_isafe.Adaptors.chattingAdaptor;
 import com.shivam.irsc_isafe.Classes.messageclass;
+import com.shivam.irsc_isafe.CreateActivity.Create_Activity;
+import com.shivam.irsc_isafe.Notifications.Notifications;
 import com.shivam.irsc_isafe.R;
 
 import java.util.ArrayList;
@@ -30,11 +21,13 @@ public class ChattingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chatting);
 
-        Intent i=new Intent(ChattingActivity.this,Login.class);
+        Intent i=new Intent(ChattingActivity.this,Create_Activity.class);
         startActivity(i);
         finish();
 
 
+
+/*
 
         final FirebaseDatabase databasechatting = FirebaseDatabase.getInstance();
         final DatabaseReference myRefchatting = databasechatting.getReference("message").child(Login.userlogin.getTeamcode());
@@ -86,6 +79,7 @@ public class ChattingActivity extends AppCompatActivity {
         });
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
 
     }
 }
